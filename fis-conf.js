@@ -1,3 +1,4 @@
+var path = require('path');
 // 静态资源版本号
 var VERSION = '1.0.0';
 // 合并开关
@@ -18,13 +19,13 @@ fis.hook('module', {
         beanExchange: 'common/bean.exchange',
         clipboard: 'common/zeroclipboard-1.3.5/ZeroClipboard'
     }
-});
+})
 
 fis.match('::package', {
     postpackager: fis.plugin('loader', {
         useInlineMap: true
     })
-});
+})
 
 // 默认设置
 fis
@@ -50,7 +51,7 @@ fis
     })
     .match('{widget/**/*,static/app/common/**.js}', {
         isMod: true
-    });
+    })
 
 
 // 合并设置
@@ -70,10 +71,25 @@ if(PACKED) {
         })
         .match('static/css/**{css,scss}', {
             packTo: 'static/css/common_pkg.css'
-        });
+        })
 }
 
+// 生产测试环境设置
+// 和线上有同样MD5，用于调试线上BUG
+fis
+    .media('debug')
+    .match('*.{css,scss,png,js}', {
+        useHash: true
+    })
+    .match('*', {
+        domain: path.join(CDN, VERSION),
+        deploy: fis.plugin('local-deliver', {
+            to: 'output/debug/' + VERSION
+        })
+    })
+
 // 生产环境设置
+// 发布后直接上传CDN服务器
 fis
     .media('prod')
     .match('*.js', {
@@ -84,12 +100,15 @@ fis
     .match('*.{css,scss}', {
         optimizer: fis.plugin('clean-css')
     })
-    // .match('*.{css,scss,png,js}', {
-    //     useHash: true
-    // })
+    .match('*.png', {
+        optimizer: fis.plugin('png-compressor')
+    })
+    .match('*.{css,scss,png,js}', {
+        useHash: true
+    })
     .match('*', {
-        domain: CDN + '/' + VERSION,
-        // deploy: fis.plugin('local-deliver', {
-        //     to: 'output/' + VERSION
-        // })
-    });
+        domain: path.join(CDN, VERSION),
+        deploy: fis.plugin('local-deliver', {
+            to: 'output/prod/' + VERSION
+        })
+    })
