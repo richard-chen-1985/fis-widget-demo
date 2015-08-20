@@ -14,8 +14,10 @@ var config = {
     // MD5后缀开关
     USEHASH: false,
     // 模块化配置
-    amdMod: {
+    MODULES: {
         mode: 'amd',
+        // fis-parser-velocity的loader配置
+        velocityLoader: 'require',
         forwardDeclaration: true,
         baseUrl: '/static/app',
         paths: {
@@ -32,6 +34,7 @@ var config = {
 
 // 添加全局忽略
 fis.set('project.ignore', fis.get('project.ignore').concat([
+    'README.md',
     '{_docs,sass)/**',
     'page/**/_*.scss',
     '{page,widget}/**.tpl',
@@ -39,7 +42,7 @@ fis.set('project.ignore', fis.get('project.ignore').concat([
 ]));
 
 // 开启模块化插件
-config.amdMod && fis.hook('module', amdMod);
+config.MODULES && fis.hook('module', config.MODULES);
 
 // 静态资源加载插件
 fis.match('::package', {
@@ -76,7 +79,7 @@ fis
     .match('page/**.html', {
         parser: fis.plugin('velocity', {
             encoding: 'utf-8',
-            loader: 'require'
+            loader: config.MODULES && config.MODULES.velocityLoader
         })
     })
     // sass
