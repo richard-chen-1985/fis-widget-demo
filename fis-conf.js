@@ -1,10 +1,15 @@
 var path = require('path');
-// 静态资源版本号
-var VERSION = '1.0.0';
-// 合并开关
-var PACKED = true;
-// cdn域名
-var CDN = 'http://static.360buyimg.com/yiye';
+
+var config = {
+    // 静态资源版本号
+    VERSION: '1.0.0',
+    // 合并开关
+    PACKED: true,
+    // cdn域名
+    CDN: '', //'http://static.360buyimg.com/yiye',
+    // MD5后缀开关
+    USEHASH: false
+}
 
 fis.hook('module', {
     mode: 'amd',
@@ -52,10 +57,14 @@ fis
     .match('{widget/**/*,static/app/common/**.js}', {
         isMod: true
     })
+    // CDN
+    .match('*', {
+        domain: config.CDN != '' ? (config.CDN + '/' + config.VERSION) : config.CDN
+    })
 
 
 // 合并设置
-if(PACKED) {
+if(config.PACKED) {
     fis
         .match('static/lib/**', {
             packTo: 'static/lib/lib_pkg.js'
@@ -63,14 +72,14 @@ if(PACKED) {
         .match('static/app/{common.js,common/**.js}', {
             packTo: 'static/app/common_pkg.js'
         })
-        .match('widget/**.js', {
-            packTo: 'static/widget_pkg.js'
-        })
-        .match('widget/**.{css,scss}', {
-            packTo: 'static/widget_pkg.css'
-        })
         .match('static/css/**{css,scss}', {
             packTo: 'static/css/common_pkg.css'
+        })
+        .match('widget/**.js', {
+            packTo: 'widget/widget_pkg.js'
+        })
+        .match('widget/**.{css,scss}', {
+            packTo: 'widget/widget_pkg.css'
         })
 }
 
@@ -79,12 +88,14 @@ if(PACKED) {
 fis
     .media('debug')
     .match('*.{css,scss,png,js}', {
-        useHash: true
+        useHash: config.USEHASH
+    })
+    .match('test/**', {
+        release: false
     })
     .match('*', {
-        domain: path.join(CDN, VERSION),
         deploy: fis.plugin('local-deliver', {
-            to: 'output/debug/' + VERSION
+            to: 'output/debug/' + config.VERSION
         })
     })
 
@@ -92,6 +103,12 @@ fis
 // 发布后直接上传CDN服务器
 fis
     .media('prod')
+    .match('*.{css,scss,png,js}', {
+        useHash: config.USEHASH
+    })
+    .match('test/**', {
+        release: false
+    })
     .match('*.js', {
         optimizer: fis.plugin('uglify-js', {
             mangle: ['require', 'define']
@@ -103,12 +120,8 @@ fis
     .match('*.png', {
         optimizer: fis.plugin('png-compressor')
     })
-    .match('*.{css,scss,png,js}', {
-        useHash: true
-    })
     .match('*', {
-        domain: path.join(CDN, VERSION),
         deploy: fis.plugin('local-deliver', {
-            to: 'output/prod/' + VERSION
+            to: 'output/prod/' + config.VERSION
         })
     })
