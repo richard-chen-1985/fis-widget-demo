@@ -1,0 +1,17 @@
+<script data-loader="seajs" src="http://misc.360buyimg.com/jdf/1.0.0/unit/base/1.0.0/base.js"></script>
+<script>
+    seajs.config({
+        base: '/',
+        alias: {
+            dialogEx: 'static/app/common/dialogEx',
+            jdUser: 'static/app/common/jdUser',
+            jqueryPin: 'static/app/common/jquery.pin',
+            jqueryShare: 'static/app/common/jquery.share',
+            fixable: 'static/app/common/jquery.fixable',
+            beanExchange: 'static/app/common/bean.exchange',
+            clipboard: 'static/app/common/zeroclipboard-1.3.5/ZeroClipboard'
+        }
+    });
+</script>
+<script src="/static/lib/jquery.js"></script>
+<script src="/static/app/common.js"></script>

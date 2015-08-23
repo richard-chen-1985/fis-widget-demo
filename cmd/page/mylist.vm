@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content=""/>
+<meta name="description" content="" />
+<title>兑换记录页 - 异业合作</title>
+#parse("/widget/meta/meta.vm")
+</head>
+<body>
+#parse("/widget/shortcut-2013/shortcut-2013.vm")
+
+<div class="main clearfix">
+    <div class="ls-main">
+        #parse("/widget/breadcrumb/breadcrumb.vm")
+        <div class="ls-main-w">
+            <div class="ls-select-panel">
+                <select name="" id="select-time-space">
+                    <option value="1">最近三个月京豆记录</option>
+                    <option value="2">最近三个月京豆记录</option>
+                    <option value="3">最近三个月京豆记录</option>
+                </select>
+            </div>
+            <!-- 表格列表 -->
+            <table class="table">
+                <thead>
+                    <th>福利名称</th>
+                    <th>兑换形式</th>
+                    <th>日期</th>
+                    <th>兑换状态</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="name">
+                            <a href="" target="_blank">20元快的打车大礼包</a>
+                        </td>
+                        <td>50京豆兑换</td>
+                        <td>2015-05-26 <span class="time">11:28:38</span></td>
+                        <td>兑换成功</td>
+                        <td class="popup">
+                            <span>查看福利</span>
+                            <div class="tplPopUp" style="display:none">
+                                <div class="detail-pop">
+                                    <div class="detail-pop-w">
+                                        <div class="pop-pic"><img src="/static/img/detail_pic.png"></div>
+                                        <div class="pop-title">100元嘀嗒打车抵用券</div>
+                                        <div class="pop-code">优惠码：1222290099-</div>
+                                        <div class="pop-binary-img"><img src="/static/img/mylist_binary_img.png"></div>
+                                    </div>
+                                    <i class="pop-arrow-1"></i>
+                                    <i class="pop-arrow-2"></i>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="name">
+                            <a href="" target="_blank">220元快的打车大礼包</a>
+                        </td>
+                        <td>50京豆兑换</td>
+                        <td>2015-05-26 <span class="time">11:28:38</span></td>
+                        <td>兑换成功</td>
+                        <td class="popup">
+                            <span>查看福利</span>
+                            <div class="tplPopUp" style="display:none">
+                                <div class="detail-pop">
+                                    <div class="detail-pop-w">
+                                        <div class="pop-pic"><img src="/static/img/detail_pic.png"></div>
+                                        <div class="pop-title">100元嘀嗒打车抵用券</div>
+                                        <div class="pop-code">优惠码：1222290099-</div>
+                                        <div class="pop-binary-img"><img src="/static/img/mylist_binary_img.png"></div>
+                                    </div>
+                                    <i class="pop-arrow-1"></i>
+                                    <i class="pop-arrow-2"></i>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="name">
+                            <a href="" target="_blank">220元快的打车大礼包</a>
+                        </td>
+                        <td>50京豆兑换</td>
+                        <td>2015-05-26 <span class="time">11:28:38</span></td>
+                        <td>兑换成功</td>
+                        <td class="popup">
+                            <span>查看福利</span>
+                            <div class="tplPopUp" style="display:none">
+                                <div class="detail-pop">
+                                    <div class="detail-pop-w">
+                                        <div class="pop-pic"><img src="/static/img/detail_pic.png"></div>
+                                        <div class="pop-title">100元嘀嗒打车抵用券</div>
+                                        <div class="pop-code">优惠码：1222290099-</div>
+                                        <div class="pop-binary-img"><img src="/static/img/mylist_binary_img.png"></div>
+                                    </div>
+                                    <i class="pop-arrow-1"></i>
+                                    <i class="pop-arrow-2"></i>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="mt20" style="text-align:right">
+                #parse("/widget/page-2/page-2.vm")
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer bg-white">
+    #parse("/widget/footer/footer.vm")
+</div>
+
+#parse("/widget/scripts/scripts.vm")
+<script src="/static/app/mylist/main.js"></script>
+
+</body>
+</html>

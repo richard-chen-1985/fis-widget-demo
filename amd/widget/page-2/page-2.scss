@@ -1,0 +1,67 @@
+@import "../../sass/_lib";
+.page-2 {
+    padding:10px 0;
+   .p-num{
+        a,
+        em {
+            display: inline-block;
+            height: 24px;
+            line-height: 24px;
+            padding: 0px 9px;
+            margin-right: 5px;
+            font-size: 12px;
+            vertical-align: top;
+        }
+        a {
+            color: #808080;
+            background:#e6e6e6;
+            &:hover,
+            &.current {
+                text-decoration: none;
+                background:$color01;
+                color:#fff;
+            }
+        }
+        .pn-prev,
+        .pn-next {
+            //font-size: 16px;
+            font-family: "\5b8b\4f53";
+            padding: 0 8px;
+            color: $color01;
+            font-weight:bold;
+        }
+        .disabled {
+            cursor: default;
+            color:#fff;
+            &:hover {
+                background:#e6e6e6;
+            }
+        }
+    }
+    .p-goto {
+        .goto-num {
+            width:22px;
+            height:18px;
+            border:1px solid #cfcfcf;
+            background:#fff;
+            padding:2px 0;
+            line-height:18px;
+            vertical-align: top;
+        }
+        .goto-btn {
+            display: inline-block;
+            width:26px;
+            height:20px;
+            line-height: 20px;
+            background:$color01;
+            color:#fff;
+            border:2px solid $color01;
+            border-bottom-color:#eb303c;
+            @include border-radius(4px);
+            vertical-align: top;
+            padding:0;
+            text-align: center;
+            text-decoration: none;
+        }
+    }
+}

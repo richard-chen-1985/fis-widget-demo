@@ -1,0 +1,132 @@
+.ui-share-mask {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  z-index: 99999; }
+
+.ui-share-list {
+  margin: 0;
+  padding: 0; }
+  .ui-share-list li {
+    list-style-type: none; }
+    .ui-share-list li a {
+      display: block;
+      color: #333;
+      padding: 0 0 0 28px;
+      text-decoration: none;
+      line-height: 20px;
+      font-size: 14px;
+      background: url(../img/share_icons_16.png) no-repeat; }
+      .ui-share-list li a:hover {
+        text-decoration: underline; }
+    .ui-share-list li .share-sinaweibo {
+      background-position: 0 2px; }
+    .ui-share-list li .share-qqweibo {
+      background-position: 0 -18px; }
+    .ui-share-list li .share-renren {
+      background-position: 0 -38px; }
+    .ui-share-list li .share-qzone {
+      background-position: 0 -58px; }
+    .ui-share-list li .share-kaixin001 {
+      background-position: 0 -78px; }
+    .ui-share-list li .share-douban {
+      background-position: 0 -98px; }
+    .ui-share-list li .share-meilishuo {
+      background-position: 0 -118px; }
+    .ui-share-list li .share-mogujie {
+      background-position: 0 -138px; }
+    .ui-share-list li .share-facebook {
+      background-position: 0 -158px; }
+    .ui-share-list li .share-twitter {
+      background-position: 0 -178px; }
+    .ui-share-list li .share-googleplus {
+      background-position: 0 -198px; }
+    .ui-share-list li .share-pinterest {
+      background-position: 0 -218px; }
+
+.ui-sharepop {
+  position: fixed;
+  width: 520px;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  z-index: 100000;
+  overflow: hidden;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px; }
+  .ui-sharepop .ui-sharepop-hd {
+    height: 35px;
+    background: #e7e7e7;
+    color: #333;
+    line-height: 35px;
+    font-size: 14px;
+    padding-left: 10px; }
+  .ui-sharepop .ui-sharepop-cont {
+    padding: 10px; }
+  .ui-sharepop .ui-share-list {
+    width: 100%;
+    overflow: hidden; }
+    .ui-sharepop .ui-share-list li {
+      width: 25%;
+      margin: 5px 0;
+      float: left; }
+  .ui-sharepop .ui-sharepop-close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    font-size: 18px; }
+
+.ui-sharetip {
+  position: absolute;
+  width: 240px;
+  background: #fff;
+  z-index: 100000;
+  border: 1px solid #ddd; }
+  .ui-sharetip .ui-sharetip-hd {
+    height: 30px;
+    background: #e7e7e7;
+    color: #333;
+    line-height: 30px;
+    font-size: 14px;
+    padding-left: 10px; }
+  .ui-sharetip .ui-sharetip-cont {
+    padding: 10px;
+    overflow: hidden; }
+  .ui-sharetip .ui-share-list {
+    width: 100%;
+    overflow: hidden; }
+    .ui-sharetip .ui-share-list li {
+      width: 50%;
+      margin: 5px 0;
+      float: left; }
+  .ui-sharetip .ui-sharetip-arrow span {
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    border-style: dashed dashed solid dashed; }
+  .ui-sharetip .ui-sharetip-arrow .arrow1 {
+    border-width: 6px;
+    border-color: transparent transparent #ddd transparent;
+    top: -12px;
+    left: 10px; }
+  .ui-sharetip .ui-sharetip-arrow .arrow2 {
+    border-width: 5px;
+    border-color: transparent transparent #e7e7e7 transparent;
+    top: -8px;
+    left: 11px; }

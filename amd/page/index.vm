@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content=""/>
+<meta name="description" content="" />
+<title>首页 - 异业合作</title>
+#parse("/widget/meta/meta.vm")
+</head>
+<body>
+#parse("/widget/shortcut-2013/shortcut-2013.vm")
+
+<div class="main clearfix">
+    <div class="category-w fl">
+        #parse("/widget/category/category.vm")
+    </div>
+    <div class="h-main">
+        <div class="main-w">
+            #parse("/widget/breadcrumb/breadcrumb.vm")
+            #parse("/widget/filter/filter.vm")
+            <!-- 列表 -->
+            <div class="list-home-wrap">
+                #parse("/widget/list-home/list-home.vm")
+                <div class="mt20" style="text-align:right">
+                    #parse("/widget/page-2/page-2.vm")
+                </div>
+                <div class="no-result"></div>
+            </div>
+        </div>
+    </div>
+        <div class="adv1010x106 fr mt20">这是广告</div>
+</div>
+
+<div class="footer bg-white">
+    #parse("/widget/footer/footer.vm")
+</div>
+
+#parse("/widget/side-ad/side-ad.vm")
+
+#parse("/widget/scripts/scripts.vm")
+<script src="/static/app/index/main.js"></script>
+
+</body>
+</html>

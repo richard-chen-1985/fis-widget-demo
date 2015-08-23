@@ -1,0 +1,180 @@
+@import "../../sass/_lib";
+.category {
+    width:182px;
+    float:left;
+    background:#fff;
+    @include box-shadow(0px, 0px, 5px, 0.2);
+    .bean-count {
+        padding:15px 12px 0;
+    }
+    .bean-count-hd {
+        overflow: hidden;
+        .img {
+            width:53px;
+            height:53px;
+            float:left;
+            margin-right:-100%;
+            position: relative;
+            .mask {
+                width:100%;
+                height:100%;
+                background:url(i/category_mask.png);
+                _background:url(i/category_mask_8.png);
+                position: absolute;
+                top:0;
+                left:0;
+            }
+            img {
+                width:100%;
+                height:100%;
+            }
+        }
+        .text {
+            padding-left:62px;
+            .title {
+                height:30px;
+                line-height: 30px;
+                font-size:14px;
+                @include singleline;
+            }
+            p {
+                font-size:18px;
+                @include singleline;
+                line-height: 18px;
+                a { color:$color01; }
+            }
+        }
+    }
+    .bean-count-bd {
+        .game-link {
+            height:38px;
+            line-height: 38px;
+            border-bottom:1px dotted $color03;
+            a {
+                color:$color06;
+                font-size:14px;
+            }
+        }
+        .like-link {
+            height:44px;
+            line-height: 44px;
+            padding-left:19px;
+            font-size:14px;
+            a {
+                display: inline-block;
+                height:100%;
+                color:$colorMain;
+                cursor: pointer;
+                em {
+                    display: inline-block;
+                    height:100%;
+                }
+            }
+        }
+    }
+    .bean-icon {
+        display: inline-block;
+        width:22px;
+        height:22px;
+        background:url(i/category_i.png);
+        vertical-align: middle;
+        margin-right:12px;
+    }
+    $v:22px;
+    .bean-icon-0 { background-position:0 0; }
+    .bean-icon-1 { background-position:0 -1 * $v; }
+    .bean-icon-2 { background-position:0 -2 * $v; }
+    .bean-icon-3 { background-position:0 -3 * $v; }
+    .bean-icon-arrow { background-position:0 -4 * $v; }
+    // 商品分类
+    .bean-title {
+        margin-top:20px;
+        height:26px;
+        line-height: 26px;
+        background:url(/static/img/category_title_bg.png) left top no-repeat;
+        text-indent:15px;
+        font-size:14px;
+    }
+    .category-m {
+        padding:10px 0;
+        .category-li {
+            width:100%;
+            height:50px;
+            position: relative;
+            z-index: 999;
+            .parent {
+                display: inline-block;
+                width:100%;
+                height:100%;
+                line-height: 50px;
+                //text-indent:19px;
+                font-size:13px;
+                position: relative;
+                cursor: pointer;
+                .bean-icon {
+                    margin-left:31px;
+                }
+                .bean-icon-arrow {
+                    position: absolute;
+                    margin:0;
+                    top:14px;
+                    right:20px;
+                }
+                em {
+                    display: inline-block;
+                    vertical-align: middle;
+                    text-indent: 0;
+                }
+            }
+            &:hover, &.current {
+                .parent {
+                    background:#ffe9e9;
+                    color:$colorMain;
+                }
+                .subcategory { display: block; }
+            }
+        }
+        .subcategory {
+            width:205px;
+            position: absolute;
+            top:-25%;
+            left:100%;
+            background:#fff;
+            @include box-shadow(0, 0, 5px, 0.1);
+            border:1px solid #e7e7e7;
+            display: none;
+            .arrow, .arrow-inner {
+                width:0;
+                height:0;
+                overflow: hidden;
+                border-style:dashed solid dashed dashed;
+                position: absolute;
+                top:50%;
+            }
+            .arrow {
+                border-width:8px;
+                border-color:transparent #e7e7e7 transparent transparent;
+                left:-16px;
+                margin-top:-8px;
+                z-index: 1;
+            }
+            .arrow-inner {
+                border-width:7px;
+                border-color:transparent #fff transparent transparent;
+                left:-14px;
+                margin-top:-7px;
+                z-index: 2;
+            }
+        }
+        .subcategory-m {
+            padding:14px 0 0 14px;
+            overflow: hidden;
+            a {
+                display: inline-block;
+                white-space: nowrap;
+                margin:0 20px 14px 0;
+                color:#707070;
+            }
+        }
+    }
+}
