@@ -71,12 +71,13 @@ fis
         domain: config.CDN ? (config.CDNURL + '/' + config.VERSION) : ''
     })
     // 添加velocity模板引擎
-    .match('/page/**.vm', {
+    .match('/page/(**.vm)', {
         parser: fis.plugin('velocity', {
             loader: config.MODULES && config.MODULES.loader
         }),
         rExt: '.html',
-        loaderLang: 'html'
+        loaderLang: 'html',
+        release: '$1'
     })
     // sass
     .match('/{widget,static}/**.scss', {
