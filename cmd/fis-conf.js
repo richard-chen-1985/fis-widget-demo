@@ -44,15 +44,6 @@ config.PACKED && fis
     .match('/static/lib/**', {
         packTo: '/static/lib/lib_pkg.js'
     })
-    .match('/static/app/{common.js,common/**.js}', {
-        packTo: '/static/app/common_pkg.js'
-    })
-    .match('/static/css/**{css,scss}', {
-        packTo: '/static/css/common_pkg.css'
-    })
-    .match('/widget/**.js', {
-        packTo: '/widget/widget_pkg.js'
-    })
     .match('/widget/**.{css,scss}', {
         packTo: '/widget/widget_pkg.css'
     })
